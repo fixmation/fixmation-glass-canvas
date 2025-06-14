@@ -1,8 +1,10 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import PageNavigation from "@/components/PageNavigation";
 import { Building, Shield, Users, Database, Zap, Code } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
+import { ConsultationBooking } from "@/components/ConsultationBooking";
 
 const features = [
   {
@@ -143,9 +145,7 @@ const EnterpriseSoftware = () => {
               <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
                 Let's discuss how we can modernize your business operations with enterprise software solutions.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Schedule Consultation
-              </button>
+              <ConsultationBooking />
             </GlassCard>
           </section>
         </main>
