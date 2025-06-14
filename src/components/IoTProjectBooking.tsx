@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -207,11 +206,11 @@ export const IoTProjectBooking = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="under-100k">Under LKR 100,000</SelectItem>
-                        <SelectItem value="100k-500k">LKR 100,000 - 500,000</SelectItem>
-                        <SelectItem value="500k-1.5m">LKR 500,000 - 1,500,000</SelectItem>
-                        <SelectItem value="1.5m-3m">LKR 1,500,000 - 3,000,000</SelectItem>
-                        <SelectItem value="over-3m">Over LKR 3,000,000</SelectItem>
+                        <SelectItem value="under-50k">Under LKR 50,000</SelectItem>
+                        <SelectItem value="50k-200k">LKR 50,000 - 200,000</SelectItem>
+                        <SelectItem value="200k-500k">LKR 200,000 - 500,000</SelectItem>
+                        <SelectItem value="500k-1m">LKR 500,000 - 1,000,000</SelectItem>
+                        <SelectItem value="over-1m">Over LKR 1,000,000</SelectItem>
                         <SelectItem value="discuss">To be discussed</SelectItem>
                       </SelectContent>
                     </Select>
