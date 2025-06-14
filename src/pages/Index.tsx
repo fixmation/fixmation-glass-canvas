@@ -43,7 +43,7 @@ const Index = () => (
   <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700 relative">
     {/* Circuit Background Image */}
     <div 
-      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 z-0"
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
       style={{
         backgroundImage: `url('/lovable-uploads/a904247c-c86f-4be8-8e77-c61dccffe3b6.png')`
       }}
