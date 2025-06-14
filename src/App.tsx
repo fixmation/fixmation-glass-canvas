@@ -12,6 +12,7 @@ import EnterpriseSoftware from "./pages/EnterpriseSoftware";
 import IoTDevices from "./pages/IoTDevices";
 import MicrocontrollerKits from "./pages/MicrocontrollerKits";
 import CustomElectronics from "./pages/CustomElectronics";
+import ProductKits from "./pages/ProductKits";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/enterprise-software" element={<EnterpriseSoftware />} />
           <Route path="/iot-devices" element={<IoTDevices />} />
           <Route path="/microcontroller-kits" element={<MicrocontrollerKits />} />
+          <Route path="/product-kits" element={<ProductKits />} />
           <Route path="/custom-electronics" element={<CustomElectronics />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

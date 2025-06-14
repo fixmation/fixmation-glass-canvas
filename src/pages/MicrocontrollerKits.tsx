@@ -1,8 +1,10 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import PageNavigation from "@/components/PageNavigation";
 import { Cpu, Zap, Code, Users, Shield, Settings } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -162,9 +164,12 @@ const MicrocontrollerKits = () => {
               <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
                 Get your hands on our comprehensive microcontroller kits and start building today.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              <Link
+                to="/product-kits"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              >
                 Browse Kits
-              </button>
+              </Link>
             </GlassCard>
           </section>
         </main>
