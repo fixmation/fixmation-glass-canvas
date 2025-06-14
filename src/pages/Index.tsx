@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
@@ -39,13 +40,13 @@ const hardwareItems = [
 ];
 
 const Index = () => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-100/60 via-white/80 to-violet-100/60 dark:from-slate-900 dark:via-slate-950 dark:to-blue-900 transition-colors duration-700">
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700">
     <Header />
     <main className="max-w-6xl mx-auto px-4">
       {/* Hero Section */}
       <section className="mb-16 flex flex-col items-center justify-center text-center">
         <div className="glass px-10 py-14 rounded-3xl mb-6 w-full md:w-[70%] mx-auto shadow-xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
             Welcome to <span className="text-primary">Fixmation Technologies</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
