@@ -40,30 +40,41 @@ const hardwareItems = [
 ];
 
 const Index = () => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700">
-    <Header />
-    <main className="max-w-6xl mx-auto px-4">
-      {/* Hero Section */}
-      <section className="mb-16 flex flex-col items-center justify-center text-center">
-        <div className="glass px-10 py-14 rounded-3xl mb-6 w-full md:w-[70%] mx-auto shadow-xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-            Welcome to <span className="text-primary">Fixmation Technologies</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Reliable solutions in <b>Software</b> & <b>Hardware</b>. 
-            <br className="hidden md:block" />
-            Innovative technology, built for your vision.
-          </p>
-        </div>
-      </section>
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700 relative">
+    {/* Circuit Background Image */}
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 z-0"
+      style={{
+        backgroundImage: `url('/lovable-uploads/a904247c-c86f-4be8-8e77-c61dccffe3b6.png')`
+      }}
+    />
+    
+    {/* Content overlay */}
+    <div className="relative z-10">
+      <Header />
+      <main className="max-w-6xl mx-auto px-4">
+        {/* Hero Section */}
+        <section className="mb-16 flex flex-col items-center justify-center text-center">
+          <div className="glass px-10 py-14 rounded-3xl mb-6 w-full md:w-[70%] mx-auto shadow-xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              Welcome to <span className="text-primary">Fixmation Technologies</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Reliable solutions in <b>Software</b> & <b>Hardware</b>. 
+              <br className="hidden md:block" />
+              Innovative technology, built for your vision.
+            </p>
+          </div>
+        </section>
 
-      <CategoryGrid title="Software Solutions" items={softwareItems} />
-      <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
+        <CategoryGrid title="Software Solutions" items={softwareItems} />
+        <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
 
-      <footer className="text-muted-foreground text-xs text-center mt-24 pb-4 select-none opacity-70">
-        &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
-      </footer>
-    </main>
+        <footer className="text-muted-foreground text-xs text-center mt-24 pb-4 select-none opacity-70">
+          &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
+        </footer>
+      </main>
+    </div>
   </div>
 );
 
