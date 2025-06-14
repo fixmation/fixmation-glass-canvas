@@ -207,11 +207,11 @@ export const IoTProjectBooking = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="under-3m">Under LKR 3,000,000</SelectItem>
-                        <SelectItem value="3m-7.5m">LKR 3,000,000 - 7,500,000</SelectItem>
-                        <SelectItem value="7.5m-15m">LKR 7,500,000 - 15,000,000</SelectItem>
-                        <SelectItem value="15m-30m">LKR 15,000,000 - 30,000,000</SelectItem>
-                        <SelectItem value="over-30m">Over LKR 30,000,000</SelectItem>
+                        <SelectItem value="under-100k">Under LKR 100,000</SelectItem>
+                        <SelectItem value="100k-500k">LKR 100,000 - 500,000</SelectItem>
+                        <SelectItem value="500k-1.5m">LKR 500,000 - 1,500,000</SelectItem>
+                        <SelectItem value="1.5m-3m">LKR 1,500,000 - 3,000,000</SelectItem>
+                        <SelectItem value="over-3m">Over LKR 3,000,000</SelectItem>
                         <SelectItem value="discuss">To be discussed</SelectItem>
                       </SelectContent>
                     </Select>
