@@ -1,6 +1,6 @@
 
 import React from "react";
-import Header from "@/components/Header";
+import SiteHeader from "@/components/SiteHeader";
 import PageNavigation from "@/components/PageNavigation";
 import { Cpu, Zap, Code, Users, Shield, Settings } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
@@ -48,7 +48,7 @@ const MicrocontrollerKits = () => {
       
       {/* Content overlay */}
       <div className="relative z-10">
-        <Header />
+        <SiteHeader />
         
         <main className="max-w-6xl mx-auto px-4 pb-12">
           <PageNavigation 

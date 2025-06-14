@@ -1,6 +1,6 @@
 
 import React from "react";
-import Header from "@/components/Header";
+import SiteHeader from "@/components/SiteHeader";
 import PageNavigation from "@/components/PageNavigation";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ const kits = [
 const ProductKits = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700">
-      <Header />
+      <SiteHeader />
       <main className="max-w-7xl mx-auto px-4 py-12">
         <PageNavigation 
           currentPage="Product Kits"

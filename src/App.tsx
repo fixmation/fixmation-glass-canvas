@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import WebApplications from "./pages/WebApplications";
@@ -13,6 +14,8 @@ import IoTDevices from "./pages/IoTDevices";
 import MicrocontrollerKits from "./pages/MicrocontrollerKits";
 import CustomElectronics from "./pages/CustomElectronics";
 import ProductKits from "./pages/ProductKits";
+import Auth from "./pages/Auth";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -22,18 +25,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/web-applications" element={<WebApplications />} />
-          <Route path="/mobile-apps" element={<MobileApps />} />
-          <Route path="/enterprise-software" element={<EnterpriseSoftware />} />
-          <Route path="/iot-devices" element={<IoTDevices />} />
-          <Route path="/microcontroller-kits" element={<MicrocontrollerKits />} />
-          <Route path="/product-kits" element={<ProductKits />} />
-          <Route path="/custom-electronics" element={<CustomElectronics />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/web-applications" element={<WebApplications />} />
+            <Route path="/mobile-apps" element={<MobileApps />} />
+            <Route path="/enterprise-software" element={<EnterpriseSoftware />} />
+            <Route path="/iot-devices" element={<IoTDevices />} />
+            <Route path="/microcontroller-kits" element={<MicrocontrollerKits />} />
+            <Route path="/custom-electronics" element={<CustomElectronics />} />
+            
+            <Route element={<ProtectedRoute />}>
+              <Route path="/product-kits" element={<ProductKits />} />
+            </Route>
+
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
