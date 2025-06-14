@@ -2,22 +2,26 @@
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const softwareItems = [
   {
     name: "Web Applications",
     description: "Beautiful, scalable, secure web apps built for your business.",
     icon: Globe,
+    link: "/web-applications"
   },
   {
     name: "Mobile Apps",
     description: "Elegant mobile experiences for iOS and Android, natively or cross-platform.",
     icon: Smartphone,
+    link: "/mobile-apps"
   },
   {
     name: "Enterprise Software",
     description: "Complex systems for enterprise needs, integration and robust support.",
     icon: Building,
+    link: "/enterprise-software"
   },
 ];
 
@@ -26,16 +30,19 @@ const hardwareItems = [
     name: "IoT Devices",
     description: "Smart, connected devices bringing intelligence to your operations.",
     icon: Cpu,
+    link: "/iot-devices"
   },
   {
     name: "Microcontroller Kits",
     description: "Custom kits for rapid prototyping and education.",
     icon: MemoryStick,
+    link: "/microcontroller-kits"
   },
   {
     name: "Custom Electronics",
     description: "Unique electronics tailored for your projects.",
     icon: CircuitBoard,
+    link: "/custom-electronics"
   },
 ];
 
