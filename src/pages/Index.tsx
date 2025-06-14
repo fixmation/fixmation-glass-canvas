@@ -56,11 +56,11 @@ const Index = () => (
         {/* Hero Section */}
         <section className="mb-16 flex flex-col items-center justify-center text-center">
           <div className="glass px-10 py-14 rounded-3xl mb-6 w-full md:w-[70%] mx-auto shadow-xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-              Welcome to <span className="text-primary">Fixmation Technologies</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter bg-gradient-to-r from-white to-gray-100 dark:from-white dark:to-gray-200 bg-clip-text text-transparent drop-shadow-lg">
+              Welcome to <span className="bg-gradient-to-r from-blue-300 to-purple-300 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">Fixmation Technologies</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Reliable solutions in <b>Software</b> & <b>Hardware</b>. 
+            <p className="text-xl md:text-2xl text-white/90 dark:text-white/95 max-w-2xl mx-auto drop-shadow-md">
+              Reliable solutions in <b className="text-white">Software</b> & <b className="text-white">Hardware</b>. 
               <br className="hidden md:block" />
               Innovative technology, built for your vision.
             </p>
@@ -70,7 +70,7 @@ const Index = () => (
         <CategoryGrid title="Software Solutions" items={softwareItems} />
         <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
 
-        <footer className="text-muted-foreground text-xs text-center mt-24 pb-4 select-none opacity-70">
+        <footer className="text-white/70 dark:text-white/80 text-xs text-center mt-24 pb-4 select-none drop-shadow">
           &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
         </footer>
       </main>
