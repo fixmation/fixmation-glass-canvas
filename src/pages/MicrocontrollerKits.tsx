@@ -1,6 +1,6 @@
-
 import React from "react";
 import Header from "@/components/Header";
+import PageNavigation from "@/components/PageNavigation";
 import { Cpu, Zap, Code, Users, Shield, Settings } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 
@@ -38,14 +38,20 @@ const MicrocontrollerKits = () => {
       <Header />
       
       <main className="max-w-6xl mx-auto px-4 pb-12">
+        <PageNavigation 
+          currentPage="Microcontroller Kits"
+          previousPage={{ title: "IoT Devices", path: "/iot-devices" }}
+          nextPage={{ title: "Custom Electronics", path: "/custom-electronics" }}
+        />
+
         {/* Hero Section */}
         <section className="mb-16 text-center">
           <div className="glass px-10 py-14 rounded-3xl mb-6 shadow-xl">
             <Cpu size={80} className="mx-auto mb-6 text-blue-500 dark:text-blue-400" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-gray-900 dark:text-white drop-shadow-lg">
               Microcontroller Kits
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-white/90 max-w-3xl mx-auto drop-shadow-md">
               Comprehensive development kits for rapid prototyping and education. 
               Perfect for students, makers, and professionals exploring embedded systems and IoT development.
             </p>
@@ -54,15 +60,15 @@ const MicrocontrollerKits = () => {
 
         {/* Services Overview */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Kit Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <GlassCard key={index} className="text-center">
-                <feature.icon size={48} className="mx-auto mb-4 text-blue-400 dark:text-blue-300" />
-                <h3 className="text-xl font-semibold mb-3 text-white/95">{feature.title}</h3>
-                <p className="text-white/80">{feature.description}</p>
+                <feature.icon size={48} className="mx-auto mb-4 text-blue-500 dark:text-blue-400" />
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white/95">{feature.title}</h3>
+                <p className="text-gray-700 dark:text-white/80">{feature.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -70,7 +76,7 @@ const MicrocontrollerKits = () => {
 
         {/* Kit Types */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Available Kits
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,8 +89,8 @@ const MicrocontrollerKits = () => {
               { title: "Custom Project Kits", desc: "Tailored kits designed for specific projects or learning objectives." }
             ].map((item, index) => (
               <GlassCard key={index}>
-                <h3 className="text-lg font-semibold text-white/95 mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.desc}</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white/95 mb-2">{item.title}</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">{item.desc}</p>
               </GlassCard>
             ))}
           </div>
@@ -93,25 +99,25 @@ const MicrocontrollerKits = () => {
         {/* What's Included */}
         <section className="mb-16">
           <GlassCard>
-            <h2 className="text-3xl font-bold mb-6 text-center text-white/95">
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white/95">
               What's Included
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <h3 className="font-semibold text-white/95 mb-2">Hardware</h3>
-                <p className="text-white/80 text-sm">Microcontroller boards, sensors, LEDs, resistors, breadboards</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Hardware</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">Microcontroller boards, sensors, LEDs, resistors, breadboards</p>
               </div>
               <div className="text-center">
-                <h3 className="font-semibold text-white/95 mb-2">Software</h3>
-                <p className="text-white/80 text-sm">Development environments, libraries, example code</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Software</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">Development environments, libraries, example code</p>
               </div>
               <div className="text-center">
-                <h3 className="font-semibold text-white/95 mb-2">Documentation</h3>
-                <p className="text-white/80 text-sm">Step-by-step guides, tutorials, project ideas</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Documentation</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">Step-by-step guides, tutorials, project ideas</p>
               </div>
               <div className="text-center">
-                <h3 className="font-semibold text-white/95 mb-2">Support</h3>
-                <p className="text-white/80 text-sm">Technical support, community access, updates</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Support</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">Technical support, community access, updates</p>
               </div>
             </div>
           </GlassCard>
@@ -119,7 +125,7 @@ const MicrocontrollerKits = () => {
 
         {/* Target Audience */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Perfect For
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -129,8 +135,8 @@ const MicrocontrollerKits = () => {
               { title: "Professionals", desc: "Rapid prototyping and proof-of-concept development for products." }
             ].map((item, index) => (
               <GlassCard key={index} className="text-center">
-                <h3 className="text-xl font-semibold text-white/95 mb-3">{item.title}</h3>
-                <p className="text-white/80">{item.desc}</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white/95 mb-3">{item.title}</h3>
+                <p className="text-gray-700 dark:text-white/80">{item.desc}</p>
               </GlassCard>
             ))}
           </div>
@@ -139,10 +145,10 @@ const MicrocontrollerKits = () => {
         {/* CTA */}
         <section className="text-center">
           <GlassCard>
-            <h2 className="text-3xl font-bold mb-4 text-white/95">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white/95">
               Start Your Journey
             </h2>
-            <p className="text-xl text-white/80 mb-6">
+            <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
               Get your hands on our comprehensive microcontroller kits and start building today.
             </p>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">

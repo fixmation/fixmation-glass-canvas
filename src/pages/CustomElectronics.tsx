@@ -1,6 +1,6 @@
-
 import React from "react";
 import Header from "@/components/Header";
+import PageNavigation from "@/components/PageNavigation";
 import { CircuitBoard, Zap, Settings, Shield, Code, Users } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 
@@ -38,14 +38,19 @@ const CustomElectronics = () => {
       <Header />
       
       <main className="max-w-6xl mx-auto px-4 pb-12">
+        <PageNavigation 
+          currentPage="Custom Electronics"
+          previousPage={{ title: "Microcontroller Kits", path: "/microcontroller-kits" }}
+        />
+
         {/* Hero Section */}
         <section className="mb-16 text-center">
           <div className="glass px-10 py-14 rounded-3xl mb-6 shadow-xl">
             <CircuitBoard size={80} className="mx-auto mb-6 text-blue-500 dark:text-blue-400" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-gray-900 dark:text-white drop-shadow-lg">
               Custom Electronics
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-white/90 max-w-3xl mx-auto drop-shadow-md">
               Unique electronic solutions tailored to your specific needs. 
               From concept to production, we design and manufacture custom electronics that solve real-world problems.
             </p>
@@ -54,15 +59,15 @@ const CustomElectronics = () => {
 
         {/* Services Overview */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Our Capabilities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <GlassCard key={index} className="text-center">
-                <feature.icon size={48} className="mx-auto mb-4 text-blue-400 dark:text-blue-300" />
-                <h3 className="text-xl font-semibold mb-3 text-white/95">{feature.title}</h3>
-                <p className="text-white/80">{feature.description}</p>
+                <feature.icon size={48} className="mx-auto mb-4 text-blue-500 dark:text-blue-400" />
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white/95">{feature.title}</h3>
+                <p className="text-gray-700 dark:text-white/80">{feature.description}</p>
               </GlassCard>
             ))}
           </div>
@@ -70,7 +75,7 @@ const CustomElectronics = () => {
 
         {/* Services */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Custom Solutions We Provide
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,8 +88,8 @@ const CustomElectronics = () => {
               { title: "Medical Devices", desc: "Specialized medical electronics with regulatory compliance and safety standards." }
             ].map((item, index) => (
               <GlassCard key={index}>
-                <h3 className="text-lg font-semibold text-white/95 mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.desc}</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white/95 mb-2">{item.title}</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">{item.desc}</p>
               </GlassCard>
             ))}
           </div>
@@ -92,7 +97,7 @@ const CustomElectronics = () => {
 
         {/* Process */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white/95 drop-shadow-md">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white/95 drop-shadow-md">
             Development Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -103,9 +108,9 @@ const CustomElectronics = () => {
               { step: "04", title: "Production", desc: "Manufacturing, assembly, and quality assurance testing" }
             ].map((item, index) => (
               <GlassCard key={index} className="text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-3">{item.step}</div>
-                <h3 className="text-lg font-semibold text-white/95 mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.desc}</p>
+                <div className="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-3">{item.step}</div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white/95 mb-2">{item.title}</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">{item.desc}</p>
               </GlassCard>
             ))}
           </div>
@@ -114,25 +119,25 @@ const CustomElectronics = () => {
         {/* Technologies */}
         <section className="mb-16">
           <GlassCard>
-            <h2 className="text-3xl font-bold mb-6 text-center text-white/95">
+            <h2 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white/95">
               Design & Manufacturing Tools
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <h3 className="font-semibold text-white/95 mb-2">Design Software</h3>
-                <p className="text-white/80 text-sm">Altium Designer, KiCad, Eagle, Fusion 360</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Design Software</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">Altium Designer, KiCad, Eagle, Fusion 360</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white/95 mb-2">Simulation</h3>
-                <p className="text-white/80 text-sm">SPICE, Multisim, LTspice, MATLAB</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Simulation</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">SPICE, Multisim, LTspice, MATLAB</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white/95 mb-2">Manufacturing</h3>
-                <p className="text-white/80 text-sm">SMT assembly, Through-hole, Testing</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Manufacturing</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">SMT assembly, Through-hole, Testing</p>
               </div>
               <div>
-                <h3 className="font-semibold text-white/95 mb-2">Programming</h3>
-                <p className="text-white/80 text-sm">C/C++, Python, VHDL, Assembly</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white/95 mb-2">Programming</h3>
+                <p className="text-gray-700 dark:text-white/80 text-sm">C/C++, Python, VHDL, Assembly</p>
               </div>
             </div>
           </GlassCard>
@@ -141,10 +146,10 @@ const CustomElectronics = () => {
         {/* CTA */}
         <section className="text-center">
           <GlassCard>
-            <h2 className="text-3xl font-bold mb-4 text-white/95">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white/95">
               Have a Custom Project in Mind?
             </h2>
-            <p className="text-xl text-white/80 mb-6">
+            <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
               Let's discuss your unique requirements and create a custom electronic solution.
             </p>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
