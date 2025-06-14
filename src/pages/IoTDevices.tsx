@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import PageNavigation from "@/components/PageNavigation";
 import { Cpu, Wifi, Shield, Zap, Database, Settings } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
+import { IoTProjectBooking } from "@/components/IoTProjectBooking";
 
 const features = [
   {
@@ -143,9 +144,7 @@ const IoTDevices = () => {
               <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
                 Let's create intelligent IoT solutions that drive efficiency and innovation.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Start IoT Project
-              </button>
+              <IoTProjectBooking />
             </GlassCard>
           </section>
         </main>
