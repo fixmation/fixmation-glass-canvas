@@ -1,7 +1,6 @@
-
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
-import { Globe, Smartphone, Building, Cpu, Chip, CircuitBoard } from "lucide-react";
+import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
 
 const softwareItems = [
   {
@@ -30,7 +29,7 @@ const hardwareItems = [
   {
     name: "Microcontroller Kits",
     description: "Custom kits for rapid prototyping and education.",
-    icon: Chip,
+    icon: MemoryStick,
   },
   {
     name: "Custom Electronics",

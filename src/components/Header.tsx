@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useTheme } from "@/hooks/use-theme";
-import { Webcam, Youtube } from "lucide-react";
+import { Webcam, Moon, Sun } from "lucide-react";
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -21,12 +21,12 @@ const Header: React.FC = () => {
       >
         {theme === "light" ? (
           <>
-            <Youtube size={20} className="text-yellow-500" />
+            <Moon size={20} />
             <span className="hidden md:inline">Dark Mode</span>
           </>
         ) : (
           <>
-            <Youtube size={20} className="text-blue-400" />
+            <Sun size={20} className="text-yellow-400" />
             <span className="hidden md:inline">Light Mode</span>
           </>
         )}
