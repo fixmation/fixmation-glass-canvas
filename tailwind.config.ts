@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -63,6 +67,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+      boxShadow: {
+        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
+      },
+      backdropBlur: {
+        glass: '16px',
+      },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -84,11 +94,16 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'theme-toggle': {
+          '0%': { filter: 'brightness(1)' },
+          '100%': { filter: 'brightness(0.85)' }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'theme-toggle': 'theme-toggle 0.4s',
 			}
 		}
 	},

@@ -1,14 +1,70 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+import Header from "@/components/Header";
+import CategoryGrid from "@/components/CategoryGrid";
+import { Globe, Smartphone, Building, Cpu, Chip, CircuitBoard } from "lucide-react";
+
+const softwareItems = [
+  {
+    name: "Web Applications",
+    description: "Beautiful, scalable, secure web apps built for your business.",
+    icon: Globe,
+  },
+  {
+    name: "Mobile Apps",
+    description: "Elegant mobile experiences for iOS and Android, natively or cross-platform.",
+    icon: Smartphone,
+  },
+  {
+    name: "Enterprise Software",
+    description: "Complex systems for enterprise needs, integration and robust support.",
+    icon: Building,
+  },
+];
+
+const hardwareItems = [
+  {
+    name: "IoT Devices",
+    description: "Smart, connected devices bringing intelligence to your operations.",
+    icon: Cpu,
+  },
+  {
+    name: "Microcontroller Kits",
+    description: "Custom kits for rapid prototyping and education.",
+    icon: Chip,
+  },
+  {
+    name: "Custom Electronics",
+    description: "Unique electronics tailored for your projects.",
+    icon: CircuitBoard,
+  },
+];
+
+const Index = () => (
+  <div className="min-h-screen bg-gradient-to-br from-blue-100/60 via-white/80 to-violet-100/60 dark:from-slate-900 dark:via-slate-950 dark:to-blue-900 transition-colors duration-700">
+    <Header />
+    <main className="max-w-6xl mx-auto px-4">
+      {/* Hero Section */}
+      <section className="mb-16 flex flex-col items-center justify-center text-center">
+        <div className="glass px-10 py-14 rounded-3xl mb-6 w-full md:w-[70%] mx-auto shadow-xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter">
+            Welcome to <span className="text-primary">Fixmation Technologies</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+            Reliable solutions in <b>Software</b> & <b>Hardware</b>. 
+            <br className="hidden md:block" />
+            Innovative technology, built for your vision.
+          </p>
+        </div>
+      </section>
+
+      <CategoryGrid title="Software Solutions" items={softwareItems} />
+      <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
+
+      <footer className="text-muted-foreground text-xs text-center mt-24 pb-4 select-none opacity-70">
+        &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
+      </footer>
+    </main>
+  </div>
+);
 
 export default Index;
