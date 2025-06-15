@@ -1,8 +1,8 @@
-
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
 import { Link } from "react-router-dom";
+import ServicesSection from "@/components/ServicesSection";
 
 const softwareItems = [
   {
@@ -77,6 +77,8 @@ const Index = () => (
 
         <CategoryGrid title="Software Solutions" items={softwareItems} />
         <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
+
+        <ServicesSection />
 
         <footer className="text-white/70 dark:text-white/80 text-xs text-center mt-24 pb-4 select-none drop-shadow">
           &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
