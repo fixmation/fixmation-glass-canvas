@@ -15,46 +15,39 @@ import {
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
 
 const formSchema = z.object({
   email: z.string().email(),
-  password: z.string().min(1),
 });
 
-type LoginFormProps = {
-  onForgotPassword: () => void;
+type PasswordRecoveryFormProps = {
+  onBackToLogin: () => void;
 };
 
-export function LoginForm({ onForgotPassword }: LoginFormProps) {
-  const navigate = useNavigate();
+export function PasswordRecoveryForm({ onBackToLogin }: PasswordRecoveryFormProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
+    defaultValues: { email: '' },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { error } = await supabase.auth.signInWithPassword({
-      email: values.email,
-      password: values.password,
+    const { error } = await supabase.auth.resetPasswordForEmail(values.email, {
+      redirectTo: `${window.location.origin}/update-password`,
     });
 
     if (error) {
       toast.error(error.message);
     } else {
-      toast.success('Signed in successfully!');
-      navigate('/');
+      toast.info('Check your email for a password reset link.');
+      form.reset();
     }
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Sign In</CardTitle>
-        <CardDescription>Enter your credentials to access your account.</CardDescription>
+        <CardTitle>Forgot Password</CardTitle>
+        <CardDescription>Enter your email to receive a password reset link.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -72,27 +65,14 @@ export function LoginForm({ onForgotPassword }: LoginFormProps) {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <Input type="password" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
             <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? 'Signing In...' : 'Sign In'}
+              {form.formState.isSubmitting ? 'Sending...' : 'Send Reset Link'}
             </Button>
           </form>
         </Form>
-        <div className="mt-4 text-center text-sm">
-          <Button variant="link" onClick={onForgotPassword} className="px-0 font-normal">
-            Forgot your password?
+        <div className="mt-4 text-center">
+          <Button variant="link" onClick={onBackToLogin} className="px-0 font-normal">
+            Back to Sign In
           </Button>
         </div>
       </CardContent>

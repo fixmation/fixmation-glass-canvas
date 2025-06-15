@@ -16,6 +16,7 @@ import CustomElectronics from "./pages/CustomElectronics";
 import ProductKits from "./pages/ProductKits";
 import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
+import UpdatePassword from "./pages/UpdatePassword";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/microcontroller-kits" element={<MicrocontrollerKits />} />
             <Route path="/custom-electronics" element={<CustomElectronics />} />
             <Route path="/product-kits" element={<ProductKits />} />
+            <Route path="/update-password" element={<UpdatePassword />} />
             
             <Route element={<ProtectedRoute />}>
               {/* Add protected routes here in the future */}

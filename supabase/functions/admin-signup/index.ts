@@ -28,6 +28,24 @@ Deno.serve(async (req: Request) => {
       { auth: { autoRefreshToken: false, persistSession: false } }
     );
 
+    // Check if an admin user already exists
+    const { data: existingAdmins, error: selectError } = await supabaseAdmin
+      .from('user_roles')
+      .select('id')
+      .eq('role', 'admin')
+      .limit(1);
+
+    if (selectError) {
+      throw new Error(`Failed to check for existing admin: ${selectError.message}`);
+    }
+
+    if (existingAdmins && existingAdmins.length > 0) {
+      return new Response(JSON.stringify({ error: 'An admin user already exists. Only one admin is allowed.' }), {
+        status: 409, // Conflict
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { data: { user }, error: createUserError } = await supabaseAdmin.auth.admin.createUser({
       email,
       password,

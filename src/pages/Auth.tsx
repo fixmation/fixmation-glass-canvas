@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { LoginForm } from '@/components/LoginForm';
@@ -7,10 +7,12 @@ import { SignupForm } from '@/components/SignupForm';
 import { AdminSignupForm } from '@/components/AdminSignupForm';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SiteHeader from "@/components/SiteHeader";
+import { PasswordRecoveryForm } from '@/components/PasswordRecoveryForm';
 
 const Auth = () => {
   const { session } = useAuth();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('signin');
 
   useEffect(() => {
     if (session) {
@@ -23,20 +25,23 @@ const Auth = () => {
       <SiteHeader />
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md">
-          <Tabs defaultValue="signin" className="w-full">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="signin">Sign In</TabsTrigger>
               <TabsTrigger value="signup">Sign Up</TabsTrigger>
               <TabsTrigger value="admin-signup">Admin Sign Up</TabsTrigger>
             </TabsList>
             <TabsContent value="signin">
-              <LoginForm />
+              <LoginForm onForgotPassword={() => setActiveTab('recovery')} />
             </TabsContent>
             <TabsContent value="signup">
               <SignupForm />
             </TabsContent>
             <TabsContent value="admin-signup">
               <AdminSignupForm />
+            </TabsContent>
+            <TabsContent value="recovery">
+              <PasswordRecoveryForm onBackToLogin={() => setActiveTab('signin')} />
             </TabsContent>
           </Tabs>
         </div>
