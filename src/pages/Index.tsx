@@ -48,7 +48,20 @@ const hardwareItems = [
 ];
 
 const Index = () => (
-  <div className="min-h-screen relative">
+  <div className="min-h-screen relative isolate">
+    {/* Main gradient background for rest */}
+    {/* Light and dark theme gradients: layered for extra richness */}
+    <div className="absolute inset-0 -z-20 pointer-events-none">
+      {/* LIGHT THEME main bg gradient */}
+      <div className="block dark:hidden absolute inset-0 w-full h-full bg-gradient-to-br from-blue-100 via-blue-50/80 to-purple-100/80" />
+      {/* Extra accent gradient bottom for light */}
+      <div className="block dark:hidden absolute bottom-0 left-0 w-full h-[20vh] bg-gradient-to-t from-blue-200/80 via-transparent to-transparent" />
+      {/* DARK THEME main bg gradient */}
+      <div className="hidden dark:block absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-purple-900/60 to-indigo-950" />
+      {/* Extra accent gradient bottom for dark */}
+      <div className="hidden dark:block absolute bottom-0 left-0 w-full h-[20vh] bg-gradient-to-t from-indigo-950/90 via-transparent to-transparent" />
+    </div>
+
     {/* Image covers 90% height at the top */}
     <div className="absolute top-0 left-0 w-full h-[90vh] z-0 pointer-events-none">
       <div
@@ -59,15 +72,14 @@ const Index = () => (
           backgroundPosition: 'top center',
         }}
       />
+      {/* Soft fade at bottom edge of image for both themes */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-blue-100/50 dark:to-indigo-950/60 pointer-events-none" />
     </div>
 
     {/* The bottom 10% gradient area */}
     <div className="absolute left-0 bottom-0 w-full h-[10vh] z-0 pointer-events-none">
       <div className="w-full h-full bg-gradient-to-b from-transparent to-blue-100 dark:to-indigo-950" />
     </div>
-
-    {/* Main gradient background for rest */}
-    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700" />
 
     {/* Content overlay */}
     <div className="relative z-10">
@@ -86,13 +98,9 @@ const Index = () => (
             </p>
           </div>
         </section>
-
         <CategoryGrid title="Software Solutions" items={softwareItems} />
         <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
-
         <ServicesSection />
-
-        {/* Contact Us link */}
         <div className="flex justify-center my-10">
           <a
             href="/contact"
@@ -101,7 +109,6 @@ const Index = () => (
             Contact Us
           </a>
         </div>
-
         <footer className="text-gray-700 dark:text-white/80 text-xs text-center mt-24 pb-4 select-none drop-shadow">
           &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
         </footer>
