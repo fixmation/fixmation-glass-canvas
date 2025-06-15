@@ -2,7 +2,7 @@
 import React from "react";
 
 // WhatsApp number in international format, no spaces or dashes
-const WHATSAPP_NUMBER = "94712345678"; // Change this to your preferred number
+const WHATSAPP_NUMBER = "94710980984"; // Updated to new number
 
 const WhatsappFloatButton: React.FC = () => {
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
