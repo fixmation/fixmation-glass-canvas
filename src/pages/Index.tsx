@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
@@ -47,16 +48,27 @@ const hardwareItems = [
 ];
 
 const Index = () => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700 relative">
-    {/* Circuit Background Image */}
-    <div 
-      className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-90 z-0 md:bg-cover"
-      style={{
-        backgroundImage: `url('/lovable-uploads/a904247c-c86f-4be8-8e77-c61dccffe3b6.png')`,
-        backgroundSize: 'contain',
-      }}
-    />
-    
+  <div className="min-h-screen relative">
+    {/* Image covers 90% height at the top */}
+    <div className="absolute top-0 left-0 w-full h-[90vh] z-0 pointer-events-none">
+      <div
+        className="w-full h-full bg-contain bg-no-repeat bg-top md:bg-cover opacity-90"
+        style={{
+          backgroundImage: `url('/lovable-uploads/a904247c-c86f-4be8-8e77-c61dccffe3b6.png')`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'top center',
+        }}
+      />
+    </div>
+
+    {/* The bottom 10% gradient area */}
+    <div className="absolute left-0 bottom-0 w-full h-[10vh] z-0 pointer-events-none">
+      <div className="w-full h-full bg-gradient-to-b from-transparent to-blue-100 dark:to-indigo-950" />
+    </div>
+
+    {/* Main gradient background for rest */}
+    <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700" />
+
     {/* Content overlay */}
     <div className="relative z-10">
       <Header />
