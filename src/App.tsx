@@ -18,6 +18,8 @@ import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UpdatePassword from "./pages/UpdatePassword";
 import MobileProject from "./pages/MobileProject";
+import InstallationService from "./pages/InstallationService";
+import WarrantyService from "./pages/WarrantyService";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
             <Route path="/product-kits" element={<ProductKits />} />
             <Route path="/update-password" element={<UpdatePassword />} />
             <Route path="/mobile-apps/start-project" element={<MobileProject />} />
+            <Route path="/installation-service" element={<InstallationService />} />
+            <Route path="/warranty-service" element={<WarrantyService />} />
             
             <Route element={<ProtectedRoute />}>
               {/* Add protected routes here in the future */}
