@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +19,7 @@ import UpdatePassword from "./pages/UpdatePassword";
 import MobileProject from "./pages/MobileProject";
 import InstallationService from "./pages/InstallationService";
 import WarrantyService from "./pages/WarrantyService";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -44,11 +44,10 @@ const App = () => (
             <Route path="/mobile-apps/start-project" element={<MobileProject />} />
             <Route path="/installation-service" element={<InstallationService />} />
             <Route path="/warranty-service" element={<WarrantyService />} />
-            
+            <Route path="/contact" element={<Contact />} />
             <Route element={<ProtectedRoute />}>
               {/* Add protected routes here in the future */}
             </Route>
-
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

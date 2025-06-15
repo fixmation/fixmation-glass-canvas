@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import CategoryGrid from "@/components/CategoryGrid";
 import { Globe, Smartphone, Building, Cpu, MemoryStick, CircuitBoard } from "lucide-react";
@@ -80,6 +79,16 @@ const Index = () => (
         <CategoryGrid title="Hardware Solutions" items={hardwareItems} />
 
         <ServicesSection />
+
+        {/* Contact Us link */}
+        <div className="flex justify-center my-10">
+          <a
+            href="/contact"
+            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors text-lg"
+          >
+            Contact Us
+          </a>
+        </div>
 
         <footer className="text-gray-700 dark:text-white/80 text-xs text-center mt-24 pb-4 select-none drop-shadow">
           &copy; {new Date().getFullYear()} Fixmation Technologies. All rights reserved.
