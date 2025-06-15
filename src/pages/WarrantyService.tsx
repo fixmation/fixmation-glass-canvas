@@ -26,11 +26,11 @@ const WarrantyService = () => {
 
           <section className="mb-16 text-center">
             <div className="glass px-10 py-14 rounded-3xl mb-6 shadow-xl">
-              <ShieldCheck size={80} className="mx-auto mb-6 text-blue-300 dark:text-blue-400" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-white drop-shadow-lg">
+              <ShieldCheck size={80} className="mx-auto mb-6 text-blue-500 dark:text-blue-400" />
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-gray-900 dark:text-white drop-shadow-lg">
                 Our Warranty Promise
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+              <p className="text-xl md:text-2xl text-gray-800 dark:text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 Peace of mind guaranteed with our comprehensive support and warranty plans.
               </p>
             </div>
@@ -39,19 +39,19 @@ const WarrantyService = () => {
           <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <GlassCard>
               <div className="flex items-center mb-4">
-                <Calendar size={40} className="mr-4 text-blue-300 dark:text-blue-400" />
-                <h3 className="text-2xl font-bold text-white/95">6-Month Free Warranty</h3>
+                <Calendar size={40} className="mr-4 text-blue-500 dark:text-blue-400" />
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">6-Month Free Warranty</h3>
               </div>
-              <p className="text-white/80">
+              <p className="text-gray-800 dark:text-white/80">
                 All our devices and parts come with a complimentary 6-month warranty. We will repair or replace it completely free of charge for any manufacturing defects.
               </p>
             </GlassCard>
             <GlassCard>
               <div className="flex items-center mb-4">
-                <Wrench size={40} className="mr-4 text-blue-300 dark:text-blue-400" />
-                <h3 className="text-2xl font-bold text-white/95">Post-Warranty Support</h3>
+                <Wrench size={40} className="mr-4 text-blue-500 dark:text-blue-400" />
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Post-Warranty Support</h3>
               </div>
-              <p className="text-white/80">
+              <p className="text-gray-800 dark:text-white/80">
                 After 6 months, we continue to offer expert support. You will only be charged for the cost of the parts and a nominal service fee for any repairs.
               </p>
             </GlassCard>
