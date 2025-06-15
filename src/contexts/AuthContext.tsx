@@ -1,4 +1,3 @@
-
 import { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Session, User } from '@supabase/supabase-js';
@@ -25,14 +24,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const fetchUserRole = async (userId: string) => {
         try {
-            const { data, error } = await supabase
+            // The (supabase as any) cast is a workaround for stale Supabase types.
+            const { data, error } = await (supabase as any)
                 .from('user_roles')
                 .select('role')
                 .eq('user_id', userId);
 
             if (error) throw error;
 
-            if (data?.some(roleObj => roleObj.role === 'admin')) {
+            if (data?.some((roleObj: { role: string }) => roleObj.role === 'admin')) {
                 setUserRole('admin');
             } else if (data && data.length > 0) {
                 setUserRole('user');
