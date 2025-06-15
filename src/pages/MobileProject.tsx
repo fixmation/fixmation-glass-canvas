@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import { MobileQuoteForm } from '@/components/MobileQuoteForm';
 import { Lightbulb, DraftingCompass, Rocket, Award, ShieldCheck } from 'lucide-react';
+import PageNavigation from '@/components/PageNavigation';
 
 const processSteps = [
   {
@@ -37,6 +38,10 @@ const MobileProject = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/80 to-purple-100/60 dark:from-slate-900 dark:via-purple-900/50 dark:to-indigo-950 transition-colors duration-700">
       <Header />
       <main className="max-w-6xl mx-auto px-4 py-12">
+        <PageNavigation
+          currentPage="Start Project"
+          previousPage={{ title: "Mobile Apps", path: "/mobile-apps" }}
+        />
         <section className="mb-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight font-inter text-gray-900 dark:text-white drop-shadow-lg">
             Bring Your Mobile App Idea to Life
