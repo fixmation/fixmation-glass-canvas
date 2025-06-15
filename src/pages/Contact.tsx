@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/hooks/use-toast";
@@ -13,27 +12,35 @@ type ContactFormInputs = {
   message: string;
 };
 
+const CONTACT_FN_URL = "https://ozgvpetrufggoiuqpruy.functions.supabase.co/contact-form-submit";
+
 const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormInputs>();
 
   const onSubmit = async (data: ContactFormInputs) => {
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const res = await fetch(CONTACT_FN_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Failed to send message");
+
       toast({
         title: "Message Sent",
         description: "Thank you for contacting us! We'll get back to you soon.",
       });
       reset();
-    } catch (err) {
+    } catch (err: any) {
       toast({
         title: "Message Failed",
-        description: "Something went wrong. Please try again later.",
+        description: err?.message || "Something went wrong. Please try again later.",
         variant: "destructive",
       });
     }
