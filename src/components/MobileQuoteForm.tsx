@@ -165,11 +165,11 @@ export const MobileQuoteForm = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="<1m">&lt; LKR 1,000,000</SelectItem>
-                      <SelectItem value="1m-2.5m">LKR 1,000,000 - LKR 2,500,000</SelectItem>
-                      <SelectItem value="2.5m-5m">LKR 2,500,000 - LKR 5,000,000</SelectItem>
-                      <SelectItem value="5m-10m">LKR 5,000,000 - LKR 10,000,000</SelectItem>
-                      <SelectItem value=">10m">&gt; LKR 10,000,000</SelectItem>
+                      <SelectItem value="<10k">&lt; LKR 10,000</SelectItem>
+                      <SelectItem value="10k-25k">LKR 10,000 - LKR 25,000</SelectItem>
+                      <SelectItem value="25k-50k">LKR 25,000 - LKR 50,000</SelectItem>
+                      <SelectItem value="50k-100k">LKR 50,000 - LKR 100,000</SelectItem>
+                      <SelectItem value=">100k">&gt; LKR 100,000</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
