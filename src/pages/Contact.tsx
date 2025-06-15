@@ -139,7 +139,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-6 h-6 text-blue-500 dark:text-blue-400" />
-              <span className="text-gray-900 dark:text-white font-medium">+715 883 884</span>
+              <span className="text-gray-900 dark:text-white font-medium">+94 715 883 884</span>
             </div>
             <div className="text-gray-800 dark:text-white/85 font-normal">
               190 Mannar Road, Puttalam 61300, Northwestern Province, Sri Lanka
