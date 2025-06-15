@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/hooks/use-toast";
@@ -7,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import PageNavigation from "@/components/PageNavigation";
+import WhatsappFloatButton from "@/components/WhatsappFloatButton";
 
 type ContactFormInputs = {
   name: string;
@@ -162,9 +162,9 @@ const Contact = () => {
           </section>
         </main>
       </div>
+      <WhatsappFloatButton />
     </div>
   );
 };
 
 export default Contact;
-
