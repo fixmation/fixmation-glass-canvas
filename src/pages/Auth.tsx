@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { LoginForm } from '@/components/LoginForm';
 import { SignupForm } from '@/components/SignupForm';
+import { AdminSignupForm } from '@/components/AdminSignupForm';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -23,15 +24,19 @@ const Auth = () => {
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md">
           <Tabs defaultValue="signin" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="signin">Sign In</TabsTrigger>
               <TabsTrigger value="signup">Sign Up</TabsTrigger>
+              <TabsTrigger value="admin-signup">Admin Sign Up</TabsTrigger>
             </TabsList>
             <TabsContent value="signin">
               <LoginForm />
             </TabsContent>
             <TabsContent value="signup">
               <SignupForm />
+            </TabsContent>
+            <TabsContent value="admin-signup">
+              <AdminSignupForm />
             </TabsContent>
           </Tabs>
         </div>

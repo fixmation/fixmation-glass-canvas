@@ -35,9 +35,10 @@ const App = () => (
             <Route path="/iot-devices" element={<IoTDevices />} />
             <Route path="/microcontroller-kits" element={<MicrocontrollerKits />} />
             <Route path="/custom-electronics" element={<CustomElectronics />} />
+            <Route path="/product-kits" element={<ProductKits />} />
             
             <Route element={<ProtectedRoute />}>
-              <Route path="/product-kits" element={<ProductKits />} />
+              {/* Add protected routes here in the future */}
             </Route>
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
