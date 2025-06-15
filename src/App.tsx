@@ -17,6 +17,7 @@ import ProductKits from "./pages/ProductKits";
 import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UpdatePassword from "./pages/UpdatePassword";
+import MobileProject from "./pages/MobileProject";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/custom-electronics" element={<CustomElectronics />} />
             <Route path="/product-kits" element={<ProductKits />} />
             <Route path="/update-password" element={<UpdatePassword />} />
+            <Route path="/mobile-apps/start-project" element={<MobileProject />} />
             
             <Route element={<ProtectedRoute />}>
               {/* Add protected routes here in the future */}

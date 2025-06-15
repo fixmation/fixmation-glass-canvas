@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import PageNavigation from "@/components/PageNavigation";
 import { Smartphone, Zap, Users, Code, Shield, Globe } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -139,9 +140,12 @@ const MobileApps = () => {
               <p className="text-xl text-gray-700 dark:text-white/80 mb-6">
                 Let's create a mobile experience that your users will love.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+              <Link
+                to="/mobile-apps/start-project"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
                 Start Your Mobile Project
-              </button>
+              </Link>
             </GlassCard>
           </section>
         </main>
