@@ -6,6 +6,7 @@ import { Mail, Phone } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import PageNavigation from "@/components/PageNavigation";
 
 type ContactFormInputs = {
   name: string;
@@ -58,6 +59,11 @@ const Contact = () => {
       />
       <div className="relative z-10">
         <main className="max-w-3xl mx-auto px-4 py-10 lg:py-20 flex flex-col gap-10">
+          {/* Navigation buttons */}
+          <PageNavigation
+            currentPage="Contact Us"
+            previousPage={{ title: "Home", path: "/" }}
+          />
           <section className="glass px-8 py-10 rounded-3xl w-full shadow-xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight text-gray-900 dark:text-white drop-shadow-lg text-center">
               Contact Us
@@ -161,3 +167,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
