@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/hooks/use-toast";
@@ -138,16 +139,16 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-6 h-6 text-blue-500 dark:text-blue-400" />
-              <span className="text-gray-900 dark:text-white font-medium">+234 80 1234 5678</span>
+              <span className="text-gray-900 dark:text-white font-medium">+715 883 884</span>
             </div>
             <div className="text-gray-800 dark:text-white/85 font-normal">
-              123 Fixmation Plaza, Victoria Island, Lagos, Nigeria
+              190 Mannar Road, Puttalam 61300, Northwestern Province, Sri Lanka
             </div>
             <div className="flex justify-center w-full mt-2">
               <iframe
                 title="Google Maps"
                 className="rounded-xl border-none w-full h-52 md:h-44"
-                src="https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=Victoria%20Island%2C%20Lagos%2C%20Nigeria&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                src="https://maps.google.com/maps?width=400&amp;height=200&amp;hl=en&amp;q=190%20Mannar%20Road%2C%20Puttalam%2061300%2C%20Northwestern%20Province%2C%20Sri%20Lanka&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 allowFullScreen
                 loading="lazy"
               />
